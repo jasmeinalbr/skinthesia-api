@@ -74,3 +74,22 @@
 2025-06-10 16:02:39,429 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
 2025-06-10 16:02:39,429 - INFO - No products found after all filters.
 2025-06-10 16:02:39,433 - INFO - 127.0.0.1 - - [10/Jun/2025 16:02:39] "POST /recommend HTTP/1.1" 200 -
+2025-06-10 16:05:58,233 - INFO - Logging started for skincare recommendation system
+2025-06-10 16:05:58,233 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 16:05:58,298 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 16:05:58,300 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 16:05:58,300 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 16:05:58,300 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 16:05:58,300 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 16:05:58,302 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 16:05:58,901 - INFO - Prediction probabilities: [0.03011933 0.03393545 0.83191    0.00684406 0.05625467 0.00310856]
+2025-06-10 16:05:58,901 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 16:05:58,902 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:05:58,902 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 16:05:58,902 - INFO - Input user: age=19 - 24, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:05:58,905 - INFO - After age filter (19 - 24): 692 products
+2025-06-10 16:05:58,905 - INFO - After category filter (Toner): 84 products
+2025-06-10 16:05:58,908 - INFO - After price filter (0 - 200000): 72 products
+2025-06-10 16:05:58,909 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 43 products
+2025-06-10 16:05:58,912 - INFO - Rekomendasi ditemukan: 43 produk, ambil top-5
+2025-06-10 16:05:58,924 - INFO - 127.0.0.1 - - [10/Jun/2025 16:05:58] "POST /recommend HTTP/1.1" 200 -
