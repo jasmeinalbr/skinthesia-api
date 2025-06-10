@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 # ------------------- SETUP LOGGING ------------------- #
 def setup_logging():
-    log_dir = "../logs"
+    log_dir = "logs"  # Changed from ../logs to logs for Railway compatibility
     log_file = "recommendation_model.log"
     
     if not os.path.exists(log_dir):
@@ -202,6 +202,7 @@ def recommend_products(df, user_age, user_price_min, user_price_max, user_catego
         logging.error("review_score column missing in DataFrame")
         raise ValueError("review_score column missing in DataFrame")
 
+    # Apply filters
     df = df[df["age"] == user_age]
     logging.info(f"After age filter ({user_age}): {len(df)} products")
 
@@ -230,18 +231,22 @@ def recommend_products(df, user_age, user_price_min, user_price_max, user_catego
     df = df[df["ingredients"].apply(has_matching_ingredient)]
     logging.info(f"After ingredients filter ({user_ingredients}): {len(df)} products")
 
-    if df.empty and not df_before_ingredient_filter.empty:
-        logging.warning("No products match the predicted ingredients. Using products from other filters as fallback.")
-        df = df_before_ingredient_filter
+    # Handle empty DataFrame
+    if df.empty:
+        if not df_before_ingredient_filter.empty:
+            logging.warning("No products match the predicted ingredients. Using products from other filters as fallback.")
+            df = df_before_ingredient_filter
+        else:
+            logging.info("No products found after all filters.")
+            return df  # Return empty DataFrame
 
     try:
         df_sorted = df.sort_values(by="review_score", ascending=False)
+        logging.info(f"Rekomendasi ditemukan: {len(df_sorted)} produk, ambil top-{top_k}")
+        return df_sorted.head(top_k)
     except Exception as e:
         logging.error(f"Error sorting by review_score: {str(e)}")
         raise
-
-    logging.info(f"Rekomendasi ditemukan: {len(df_sorted)} produk, ambil top-{top_k}")
-    return df_sorted.head(top_k)
 
 # ------------------- FLASK ENDPOINT ------------------- #
 @app.route('/recommend', methods=['POST'])
@@ -252,12 +257,12 @@ def recommend():
     try:
         # Get JSON input from request
         data = request.get_json()
-        if not data or 'user_input' not in data:
-            return jsonify({"status": "error", "message": "Missing user_input in request body"}), 400
+        if not data:
+            return jsonify({"status": "error", "message": "No JSON data provided"}), 400
 
-        user_input = data["user_input"]
+        # Check for required fields directly
         required_fields = ["skin_type", "skin_concern", "skin_goal", "ingredient", "age", "price_min", "price_max", "category"]
-        missing_fields = [field for field in required_fields if field not in user_input]
+        missing_fields = [field for field in required_fields if field not in data]
         if missing_fields:
             return jsonify({"status": "error", "message": f"Missing required fields: {missing_fields}"}), 400
 
@@ -267,10 +272,10 @@ def recommend():
         df_filtered = load_and_prepare_data(file_path)
 
         user_ingredients = predict_ingredient_categories(
-            skin_type=user_input["skin_type"],
-            skin_concern=user_input["skin_concern"],
-            skin_goal=user_input["skin_goal"],
-            ingredient=user_input["ingredient"],
+            skin_type=data["skin_type"],
+            skin_concern=data["skin_concern"],
+            skin_goal=data["skin_goal"],
+            ingredient=data["ingredient"],
             threshold=0.3,
             use_class_thresholds=True,
             best_thresholds=best_thresholds
@@ -278,10 +283,10 @@ def recommend():
 
         top_products = recommend_products(
             df_filtered,
-            user_age=user_input["age"],
-            user_price_min=user_input["price_min"],
-            user_price_max=user_input["price_max"],
-            user_category=user_input["category"],
+            user_age=data["age"],
+            user_price_min=data["price_min"],
+            user_price_max=data["price_max"],
+            user_category=data["category"],
             user_ingredients=user_ingredients,
             top_k=5
         )
@@ -302,8 +307,9 @@ def recommend():
                 })
         else:
             result["message"] = (
-                "Tidak ada produk yang cocok bahkan setelah fallback. Kemungkinan penyebab:\n"
-                "- Tidak ada toner untuk umur 25-29 dalam rentang harga tersebut.\n"
+                "Tidak ada produk yang cocok dengan kriteria. Kemungkinan penyebab:\n"
+                f"- Tidak ada produk untuk umur '{data['age']}' dalam kategori '{data['category']}' "
+                f"dan rentang harga {data['price_min']}-{data['price_max']}.\n"
                 "Saran:\n"
                 "- Coba rentang harga lebih luas (misalnya, 0-500000).\n"
                 "- Coba skin type, concern, goal, atau ingredient lain.\n"
