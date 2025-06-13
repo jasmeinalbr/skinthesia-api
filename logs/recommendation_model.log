@@ -1,90 +1,95 @@
-2025-06-10 15:16:48,397 - INFO - Logging started for skincare recommendation system
-2025-06-10 15:16:48,399 - INFO - 127.0.0.1 - - [10/Jun/2025 15:16:48] "[31m[1mPOST /recommend HTTP/1.1[0m" 400 -
-2025-06-10 15:17:59,321 - INFO - Logging started for skincare recommendation system
-2025-06-10 15:17:59,339 - INFO - Loading dataset from: data/products_integrated_features.csv
-2025-06-10 15:17:59,650 - INFO - Preprocessing selesai. Total data: 908
-2025-06-10 15:17:59,657 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
-2025-06-10 15:17:59,657 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
-2025-06-10 15:17:59,658 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
-2025-06-10 15:17:59,658 - INFO - Rating data types: float64, Total Reviews data types: int64
-2025-06-10 15:17:59,662 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
-2025-06-10 15:18:02,779 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203904 0.00159099]
-2025-06-10 15:18:02,780 - INFO - Predicted ingredient categories: ['brightening']
-2025-06-10 15:18:02,780 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:18:02,781 - INFO - Mulai filtering rekomendasi berdasarkan input user...
-2025-06-10 15:18:02,782 - INFO - Input user: age=25-29, category=Toner, price_range=[50000, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:18:02,792 - INFO - After age filter (25-29): 0 products
-2025-06-10 15:18:02,794 - INFO - After category filter (Toner): 0 products
-2025-06-10 15:18:02,796 - INFO - After price filter (50000 - 200000): 0 products
-2025-06-10 15:18:02,803 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
-2025-06-10 15:18:02,804 - INFO - No products found after all filters.
-2025-06-10 15:18:02,810 - INFO - 127.0.0.1 - - [10/Jun/2025 15:18:02] "POST /recommend HTTP/1.1" 200 -
-2025-06-10 15:19:00,994 - INFO - Logging started for skincare recommendation system
-2025-06-10 15:19:02,561 - INFO - Loading dataset from: data/products_integrated_features.csv
-2025-06-10 15:19:05,985 - INFO - Preprocessing selesai. Total data: 908
-2025-06-10 15:19:06,008 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
-2025-06-10 15:19:06,146 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
-2025-06-10 15:19:06,147 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
-2025-06-10 15:19:06,147 - INFO - Rating data types: float64, Total Reviews data types: int64
-2025-06-10 15:19:06,180 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
-2025-06-10 15:19:20,127 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203904 0.00159099]
-2025-06-10 15:19:20,128 - INFO - Predicted ingredient categories: ['brightening']
-2025-06-10 15:19:20,128 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:20,129 - INFO - Mulai filtering rekomendasi berdasarkan input user...
-2025-06-10 15:19:20,130 - INFO - Input user: age=0-29, category=Toner, price_range=[50000, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:20,137 - INFO - After age filter (0-29): 0 products
-2025-06-10 15:19:20,138 - INFO - After category filter (Toner): 0 products
-2025-06-10 15:19:20,140 - INFO - After price filter (50000 - 200000): 0 products
-2025-06-10 15:19:20,143 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
-2025-06-10 15:19:20,143 - INFO - No products found after all filters.
-2025-06-10 15:19:20,145 - INFO - 127.0.0.1 - - [10/Jun/2025 15:19:20] "POST /recommend HTTP/1.1" 200 -
-2025-06-10 15:19:40,837 - INFO - Logging started for skincare recommendation system
-2025-06-10 15:19:40,838 - INFO - Loading dataset from: data/products_integrated_features.csv
-2025-06-10 15:19:40,877 - INFO - Preprocessing selesai. Total data: 908
-2025-06-10 15:19:40,878 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
-2025-06-10 15:19:40,878 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
-2025-06-10 15:19:40,878 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
-2025-06-10 15:19:40,878 - INFO - Rating data types: float64, Total Reviews data types: int64
-2025-06-10 15:19:40,880 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
-2025-06-10 15:19:41,404 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203904 0.00159099]
-2025-06-10 15:19:41,404 - INFO - Predicted ingredient categories: ['brightening']
-2025-06-10 15:19:41,405 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:41,405 - INFO - Mulai filtering rekomendasi berdasarkan input user...
-2025-06-10 15:19:41,405 - INFO - Input user: age=0-29, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:41,407 - INFO - After age filter (0-29): 0 products
-2025-06-10 15:19:41,408 - INFO - After category filter (Toner): 0 products
-2025-06-10 15:19:41,409 - INFO - After price filter (0 - 200000): 0 products
-2025-06-10 15:19:41,410 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
-2025-06-10 15:19:41,410 - INFO - No products found after all filters.
-2025-06-10 15:19:41,412 - INFO - 127.0.0.1 - - [10/Jun/2025 15:19:41] "POST /recommend HTTP/1.1" 200 -
-2025-06-10 15:19:52,047 - INFO - Logging started for skincare recommendation system
-2025-06-10 15:19:52,047 - INFO - Loading dataset from: data/products_integrated_features.csv
-2025-06-10 15:19:52,075 - INFO - Preprocessing selesai. Total data: 908
-2025-06-10 15:19:52,076 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
-2025-06-10 15:19:52,077 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
-2025-06-10 15:19:52,077 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
-2025-06-10 15:19:52,078 - INFO - Rating data types: float64, Total Reviews data types: int64
-2025-06-10 15:19:52,078 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
-2025-06-10 15:19:52,648 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203904 0.00159099]
-2025-06-10 15:19:52,648 - INFO - Predicted ingredient categories: ['brightening']
-2025-06-10 15:19:52,650 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:52,650 - INFO - Mulai filtering rekomendasi berdasarkan input user...
-2025-06-10 15:19:52,651 - INFO - Input user: age=0-29, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
-2025-06-10 15:19:52,652 - INFO - After age filter (0-29): 0 products
-2025-06-10 15:19:52,653 - INFO - After category filter (Toner): 0 products
-2025-06-10 15:19:52,654 - INFO - After price filter (0 - 200000): 0 products
-2025-06-10 15:19:52,656 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
-2025-06-10 15:19:52,656 - INFO - No products found after all filters.
-2025-06-10 15:19:52,658 - INFO - 127.0.0.1 - - [10/Jun/2025 15:19:52] "POST /recommend HTTP/1.1" 200 -
-2025-06-10 16:08:05,597 - INFO - Logging started for skincare recommendation system
-2025-06-10 16:08:05,645 - ERROR - Gagal menjalankan sistem: 400 Bad Request: Failed to decode JSON object: Expecting value: line 9 column 14 (char 194)
-2025-06-10 16:08:05,682 - INFO - 127.0.0.1 - - [10/Jun/2025 16:08:05] "[35m[1mPOST /recommend HTTP/1.1[0m" 500 -
-2025-06-10 16:08:27,678 - INFO - Logging started for skincare recommendation system
-2025-06-10 16:08:27,679 - ERROR - Gagal menjalankan sistem: 400 Bad Request: Failed to decode JSON object: Expecting value: line 9 column 14 (char 194)
-2025-06-10 16:08:27,680 - INFO - 127.0.0.1 - - [10/Jun/2025 16:08:27] "[35m[1mPOST /recommend HTTP/1.1[0m" 500 -
-2025-06-10 16:08:41,301 - INFO - Logging started for skincare recommendation system
-2025-06-10 16:08:41,303 - ERROR - Gagal menjalankan sistem: 400 Bad Request: Failed to decode JSON object: Expecting value: line 9 column 14 (char 194)
-2025-06-10 16:08:41,306 - INFO - 127.0.0.1 - - [10/Jun/2025 16:08:41] "[35m[1mPOST /recommend HTTP/1.1[0m" 500 -
-2025-06-12 15:46:14,719 - INFO - Logging started for skincare recommendation system
-2025-06-12 15:46:14,725 - ERROR - Gagal menjalankan sistem: 400 Bad Request: Failed to decode JSON object: Expecting value: line 9 column 14 (char 194)
-2025-06-12 15:46:14,730 - INFO - 127.0.0.1 - - [12/Jun/2025 15:46:14] "[35m[1mPOST /recommend HTTP/1.1[0m" 500 -
+2025-06-10 15:47:20,794 - INFO - Logging started for skincare recommendation system
+2025-06-10 15:47:20,795 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 15:47:20,846 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 15:47:20,848 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 15:47:20,849 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 15:47:20,849 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 15:47:20,849 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 15:47:20,850 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 15:47:22,435 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203903 0.00159099]
+2025-06-10 15:47:22,435 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 15:47:22,435 - INFO - Mapped ingredients: ['vitamin c', 'arbutin', 'licorice', 'niacinamide']
+2025-06-10 15:47:22,435 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 15:47:22,436 - INFO - Input user: age=0-29, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'arbutin', 'licorice', 'niacinamide']
+2025-06-10 15:47:22,437 - INFO - After age filter (0-29): 0 products
+2025-06-10 15:47:22,444 - INFO - After category filter (Toner): 0 products
+2025-06-10 15:47:22,447 - INFO - After price filter (0 - 200000): 0 products
+2025-06-10 15:47:22,450 - INFO - After ingredients filter (['vitamin c', 'arbutin', 'licorice', 'niacinamide']): 0 products
+2025-06-10 15:47:22,450 - INFO - No products found after all filters.
+2025-06-10 15:47:22,453 - INFO - 127.0.0.1 - - [10/Jun/2025 15:47:22] "POST /recommend HTTP/1.1" 200 -
+2025-06-10 15:51:18,119 - INFO - Logging started for skincare recommendation system
+2025-06-10 15:51:18,121 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 15:51:18,193 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 15:51:18,194 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 15:51:18,195 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 15:51:18,198 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 15:51:18,200 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 15:51:18,236 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 15:51:24,163 - INFO - Prediction probabilities: [0.00099935 0.00936965 0.995365   0.00139097 0.00203903 0.00159099]
+2025-06-10 15:51:24,164 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 15:51:24,164 - INFO - Mapped ingredients: ['vitamin c', 'arbutin', 'licorice', 'niacinamide']
+2025-06-10 15:51:24,166 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 15:51:24,166 - INFO - Input user: age=25-29, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'arbutin', 'licorice', 'niacinamide']
+2025-06-10 15:51:24,171 - INFO - After age filter (25-29): 0 products
+2025-06-10 15:51:24,173 - INFO - After category filter (Toner): 0 products
+2025-06-10 15:51:24,174 - INFO - After price filter (0 - 200000): 0 products
+2025-06-10 15:51:24,175 - INFO - After ingredients filter (['vitamin c', 'arbutin', 'licorice', 'niacinamide']): 0 products
+2025-06-10 15:51:24,175 - INFO - No products found after all filters.
+2025-06-10 15:51:24,176 - INFO - 127.0.0.1 - - [10/Jun/2025 15:51:24] "POST /recommend HTTP/1.1" 200 -
+2025-06-10 15:57:56,132 - INFO - Logging started for skincare recommendation system
+2025-06-10 15:57:56,137 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 15:57:56,222 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 15:57:56,223 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 15:57:56,225 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 15:57:56,225 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 15:57:56,226 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 15:57:56,227 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 15:57:56,913 - INFO - Prediction probabilities: [0.03011933 0.03393545 0.83191    0.00684406 0.05625467 0.00310856]
+2025-06-10 15:57:56,913 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 15:57:56,913 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 15:57:56,913 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 15:57:56,913 - INFO - Input user: age=25-29, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 15:57:56,914 - INFO - After age filter (25-29): 0 products
+2025-06-10 15:57:56,916 - INFO - After category filter (Toner): 0 products
+2025-06-10 15:57:56,917 - INFO - After price filter (0 - 200000): 0 products
+2025-06-10 15:57:56,920 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
+2025-06-10 15:57:56,920 - INFO - No products found after all filters.
+2025-06-10 15:57:56,921 - INFO - 127.0.0.1 - - [10/Jun/2025 15:57:56] "POST /recommend HTTP/1.1" 200 -
+2025-06-10 16:02:38,779 - INFO - Logging started for skincare recommendation system
+2025-06-10 16:02:38,784 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 16:02:38,854 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 16:02:38,854 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 16:02:38,854 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 16:02:38,855 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 16:02:38,855 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 16:02:38,856 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 16:02:39,421 - INFO - Prediction probabilities: [0.03011933 0.03393545 0.83191    0.00684406 0.05625467 0.00310856]
+2025-06-10 16:02:39,422 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 16:02:39,422 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:02:39,422 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 16:02:39,422 - INFO - Input user: age=19-24, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:02:39,425 - INFO - After age filter (19-24): 0 products
+2025-06-10 16:02:39,426 - INFO - After category filter (Toner): 0 products
+2025-06-10 16:02:39,428 - INFO - After price filter (0 - 200000): 0 products
+2025-06-10 16:02:39,429 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 0 products
+2025-06-10 16:02:39,429 - INFO - No products found after all filters.
+2025-06-10 16:02:39,433 - INFO - 127.0.0.1 - - [10/Jun/2025 16:02:39] "POST /recommend HTTP/1.1" 200 -
+2025-06-10 16:05:58,233 - INFO - Logging started for skincare recommendation system
+2025-06-10 16:05:58,233 - INFO - Loading dataset from: data/products_integrated_features.csv
+2025-06-10 16:05:58,298 - INFO - Preprocessing selesai. Total data: 908
+2025-06-10 16:05:58,300 - INFO - Sample ingredients: [['niacinamide', 'licorice, niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['niacinamide', 'tea tree', 'salicylic acid'], ['salicylic acid, vitamin c', 'vitamin c', 'salicylic acid'], ['niacinamide', 'niacinamide, salicylic acid', 'salicylic acid'], ['bha', 'tea tree', 'retinol', 'centella asiatica']]
+2025-06-10 16:05:58,300 - INFO - Sample review_score: [301464.9, 539945.3999999999, 406585.60000000003, 86328.4, 17992.8]
+2025-06-10 16:05:58,300 - INFO - Available columns: ['product_name', 'brand', 'image', 'price', 'rating', 'total_reviews', 'age', 'category', 'ingredients', 'review_score']
+2025-06-10 16:05:58,300 - INFO - Rating data types: float64, Total Reviews data types: int64
+2025-06-10 16:05:58,302 - INFO - Normalized inputs: skin_type=['oily'], skin_concern=['acne'], skin_goal=['brightening'], ingredient=['niacinamide']
+2025-06-10 16:05:58,901 - INFO - Prediction probabilities: [0.03011933 0.03393545 0.83191    0.00684406 0.05625467 0.00310856]
+2025-06-10 16:05:58,901 - INFO - Predicted ingredient categories: ['brightening']
+2025-06-10 16:05:58,902 - INFO - Mapped ingredients: ['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:05:58,902 - INFO - Mulai filtering rekomendasi berdasarkan input user...
+2025-06-10 16:05:58,902 - INFO - Input user: age=19 - 24, category=Toner, price_range=[0, 200000], ingredients=['vitamin c', 'licorice', 'niacinamide', 'arbutin']
+2025-06-10 16:05:58,905 - INFO - After age filter (19 - 24): 692 products
+2025-06-10 16:05:58,905 - INFO - After category filter (Toner): 84 products
+2025-06-10 16:05:58,908 - INFO - After price filter (0 - 200000): 72 products
+2025-06-10 16:05:58,909 - INFO - After ingredients filter (['vitamin c', 'licorice', 'niacinamide', 'arbutin']): 43 products
+2025-06-10 16:05:58,912 - INFO - Rekomendasi ditemukan: 43 produk, ambil top-5
+2025-06-10 16:05:58,924 - INFO - 127.0.0.1 - - [10/Jun/2025 16:05:58] "POST /recommend HTTP/1.1" 200 -
