@@ -140,10 +140,3 @@ Semua proses akan tercatat dalam file `logs/recommendation_model.log` dengan det
 
 Pull request dan diskusi sangat dipersilakan! Silakan fork dan modifikasi sesuai kebutuhan.
 
-## 📄 Lisensi
-
-MIT License. Lihat `LICENSE` untuk detail.
-
----
-
-Kalau kamu mau file `README.md` ini dalam format file langsung, tinggal bilang saja, bisa saya generate.
